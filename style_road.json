@@ -1,0 +1,35 @@
+﻿{
+    "version": 8,
+    "name": "My Style",
+    "sources": {
+        "cyberjapan": {
+            "type": "vector",
+            "tiles": [
+                "https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf"
+                ],
+            "attribution": "国土地理院ベクトルタイル提供実験"
+        }
+    },
+    "layers": [
+        {
+            "id": "高速道路",
+            "type": "line",
+            "source-layer": "road",
+            "source": "cyberjapan",
+            "paint": {"line-color": "rgba(43, 52, 137, 1)", "line-width": 3.5},
+            "filter": [
+                "any",
+                [
+                  "==",
+                  "ftCode",
+                  52703
+                ],
+                [
+                  "==",
+                  "ftCode",
+                  52704
+                ]
+              ]
+        }
+    ]
+}
